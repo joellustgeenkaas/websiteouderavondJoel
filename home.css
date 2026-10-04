@@ -13,6 +13,23 @@ body {
     color: #111;
 }
 
+.hoornbeeck-page,
+.ict-page,
+.overons-page,
+.gallery-page,
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
 .top-header {
     display: flex;
     align-items: center;
@@ -45,8 +62,6 @@ body {
     flex: 1;
     min-width: 0;
     overflow: hidden;
-    font-size: clamp(1.5rem, 5vw, 5rem);
-    font-weight: normal;
     line-height: 1;
     white-space: nowrap;
 }
@@ -92,6 +107,12 @@ body {
 }
 
 @media (max-width: 520px) {
+    h1,
+    h2,
+    h3 {
+        font-size: 1.5rem;
+    }
+
     .navbar {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -121,10 +142,8 @@ body {
 
 .welcome-word {
     flex: 0 0 auto;
-    font-size: clamp(2.8rem, 5vw, 6rem);
-    font-weight: bold;
+    font-size: 4rem;
     line-height: 1;
-    letter-spacing: 2px;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     color: #000;
@@ -224,13 +243,6 @@ body {
     font-size: 16px;
 }
 
-.hoornbeeck-page,
-.ict-page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 .hoornbeeck-page .content,
 .ict-page .content {
     flex: 1;
@@ -267,7 +279,6 @@ body {
 .intro-copy h2,
 .info-section h2 {
     margin: 8px 0 18px;
-    font-size: clamp(32px, 5vw, 58px);
     line-height: 1;
 }
 
@@ -367,12 +378,6 @@ body {
     font-size: 17px;
 }
 
-.overons-page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 .overons-page .content {
     flex: 1;
     background-color: #00a9a3;
@@ -386,7 +391,6 @@ body {
 
 .team-section h2 {
     margin-bottom: 30px;
-    font-size: clamp(2rem, 4vw, 3.5rem);
     text-align: center;
     color: #000;
 }
@@ -425,9 +429,16 @@ body {
 }
 
 .team-card h3 {
-    font-size: 1.3rem;
     color: #000;
+    font-size: 1.5rem;
+    font-weight: normal;
     margin: 0;
+}
+
+.team-details {
+    margin: 8px 0 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 .team-card a {
@@ -457,12 +468,6 @@ body {
     .team-grid {
         grid-template-columns: 1fr;
     }
-}
-
-.gallery-page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 .gallery-main {
@@ -614,8 +619,76 @@ body {
 
     .gallery-grid {
         justify-self: center;
-        margin: 0 auto;
         transform: translateY(-10px);
+    }
+}
+
+.contact-main {
+    flex: 1;
+    display: grid;
+    align-items: center;
+    padding: 40px 24px;
+    background-color: #00a9a3;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+    align-items: stretch;
+    gap: 28px;
+    width: min(100%, 1000px);
+    margin: 0 auto;
+}
+
+.contact-details {
+    display: grid;
+    align-content: center;
+    gap: 22px;
+    padding: 32px;
+    border: 2px solid #000;
+    background-color: #f5ba36;
+}
+
+.contact-details h2,
+.contact-item {
+    margin: 0;
+}
+
+.contact-item {
+    line-height: 1.5;
+}
+
+.contact-item strong {
+    display: block;
+}
+
+.contact-item a {
+    color: #111;
+    overflow-wrap: anywhere;
+    text-underline-offset: 3px;
+}
+
+.contact-photo {
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border: 2px solid #000;
+    background-color: #f6fafa;
+}
+
+.contact-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 700px) {
+    .contact-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .contact-details {
+        padding: 24px;
     }
 }
 
