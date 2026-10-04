@@ -1,11 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fotogallerij</title>
+    <link rel="stylesheet" href="home.css">
 </head>
-<body>
-    
+<body class="gallery-page">
+    <header class="top-header">
+        <div class="logo-box">
+            <img src="image/HBC-logo.png" alt="Hoornbeeck logo" class="logo-img">
+        </div>
+        <h1 class="HOORNBEECK-title">Fotogallerij</h1>
+    </header>
+
+    <nav class="navbar" aria-label="Hoofdnavigatie">
+        <a href="home.html" class="nav-item">HOME</a>
+        <a href="Hoornbeeck.html" class="nav-item">hoornbeeck</a>
+        <a href="ICT-Opleiding.html" class="nav-item">ICT-Opleiding</a>
+        <a href="overons.html" class="nav-item">Over Ons</a>
+        <a href="fotogallerij.html" class="nav-item active" aria-current="page">foto gallerij</a>
+        <a href="home.html#contact-block" class="nav-item">contact</a>
+    </nav>
+
+    <main class="gallery-main">
+        <section class="gallery-section" aria-label="Fotogalerij">
+            <div class="gallery-layout">
+                <aside class="gallery-sidebar">
+                    <div class="canva-content">
+                        <div class="canva-frame">
+                            <iframe
+                                src="https://www.canva.com/design/DAHS1A4clk0/cCKoz7cOv-g58F0i7QrjSw/view?embed"
+                                title="Canva-presentatie: Werkweek Duitsland"
+                                allow="fullscreen">
+                            </iframe>
+                        </div>
+                    </div>
+                </aside>
+                <div class="gallery-grid">
+                    <figure class="gallery-photo gallery-top-left">
+                        <img src="image/1.jpeg" alt="Foto 1">
+                    </figure>
+                    <figure class="gallery-photo gallery-top-center">
+                        <img src="image/2.jpeg" alt="Foto 2">
+                    </figure>
+                    <figure class="gallery-photo gallery-top-right">
+                        <img src="image/3.jpeg" alt="Foto 3">
+                    </figure>
+                    <figure class="gallery-photo gallery-left-one">
+                        <img src="image/4.jpeg" alt="Foto 4">
+                    </figure>
+                    <figure class="gallery-photo gallery-left-two">
+                        <img src="image/5.jpeg" alt="Foto 5">
+                    </figure>
+                    <figure class="gallery-photo gallery-center">
+                        <img src="image/6.png" alt="Foto 6">
+                    </figure>
+                    <figure class="gallery-photo gallery-right-one">
+                        <img src="image/7.png" alt="Foto 7">
+                    </figure>
+                    <figure class="gallery-photo gallery-right-two">
+                        <img src="image/8.png" alt="Foto 8">
+                    </figure>
+                    <figure class="gallery-photo gallery-bottom-left">
+                        <img src="image/9.jpeg" alt="Foto 9">
+                    </figure>
+                    <figure class="gallery-photo gallery-bottom-right">
+                        <img src="image/10.jpeg" alt="Foto 10">
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+
 </body>
 </html>
