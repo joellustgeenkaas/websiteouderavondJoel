@@ -63,6 +63,7 @@ h3 {
     overflow: hidden;
     line-height: 1;
     white-space: nowrap;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 
@@ -86,7 +87,7 @@ h3 {
     border: 2px solid #000;
     text-decoration: none;
     color: #00a9a3;
-    font-size: 16px;
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
     transition: background-color 180ms ease;
 }
 
@@ -134,33 +135,38 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    flex: 0 0 900px;
+    gap: clamp(12px, 3vw, 30px);
+    width: min(100%, 900px);
+    flex: 0 1 900px;
     margin: 0 auto;
 }
 
 .welcome-word {
     flex: 0 0 auto;
-    font-size: 4rem;
+    font-size: clamp(2rem, 6vw, 4rem);
     line-height: 1;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     color: #000;
     text-align: center;
-    min-height: 290px;
+    min-height: clamp(180px, 32vw, 290px);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .building-img {
-    width: 680px;
+    flex: 1 1 0;
+    min-width: 0;
+    width: min(100%, 680px);
+    height: auto;
     border: 3px solid #000;
 }
 
 
 .schedule {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     background-color: #00a9a3;
@@ -168,9 +174,10 @@ h3 {
 }
 
 .schedule-title {
-    flex: 0 0 300px;
-    height: 300px;
-    margin: 0 0 30px;
+    flex: 1 1 260px;
+    max-width: 300px;
+    min-height: 300px;
+    height: auto;
     padding: 25px;
     background-color: #fff;
     border: 3px solid #000;
@@ -182,13 +189,13 @@ h3 {
 
 .home-page p {
     margin-top: 20px;
-    font-size: 25px;
+    font-size: clamp(1rem, 2vw, 1.5625rem);
     line-height: 1.5;
     color: #084887;
 }
 
 #contact-block p {
-    font-size: 22.95px;
+    font-size: clamp(1rem, 1.8vw, 1.4rem);
 }
 
 .timeline {
@@ -384,7 +391,7 @@ h3 {
 }
 
 .team-section {
-    width: 1200px;
+    width: min(1200px, 100%);
     margin: 0 auto;
 }
 
@@ -458,8 +465,21 @@ h3 {
 }
 
 @media (max-width: 900px) {
+    .hoornbeeck-page .fact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .intro-section {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .ict-main-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
     .team-grid {
-        grid-template-columns: repeat(2, minmax(180px, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -484,7 +504,7 @@ h3 {
 
 .gallery-layout {
     display: grid;
-    grid-template-columns: minmax(480px, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: clamp(20px, 4vw, 48px);
     align-items: center;
 }
@@ -714,3 +734,48 @@ h3 {
     line-height: normal;
 }
 
+@media (max-width: 600px) {
+    .home-page .content,
+    .hoornbeeck-page .content,
+    .ict-page .content,
+    .overons-page .content {
+        padding: 24px 16px;
+    }
+
+    .home-page .content {
+        min-height: 50vh;
+    }
+
+    .image-block {
+        flex-direction: column;
+    }
+
+    .welcome-word {
+        writing-mode: horizontal-tb;
+        transform: none;
+        min-height: 0;
+    }
+
+    .intro-section {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .hoornbeeck-page .fact-grid,
+    .ict-page .fact-grid,
+    .other-directions .fact-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .gallery-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .contact-main {
+        padding: 24px 16px;
+    }
+}
